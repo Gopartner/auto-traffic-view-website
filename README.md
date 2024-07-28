@@ -29,7 +29,10 @@ Perbarui file `config/config.json` sesuai kebutuhan Anda. Contoh konfigurasi:
 
 ```json
 {
-  "proxies": [    "http://192.168.1.100:8080",    "http://192.168.1.101:8080",    "http://192.168.1.102:8080"  ],
+  "proxies": [
+  "http://192.168.1.100:8080",
+  "http://192.168.1.101:8080",
+  "http://192.168.1.102:8080"],
   "website": "http://www.togelon.com"
 }
 ```
