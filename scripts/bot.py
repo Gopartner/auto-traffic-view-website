@@ -1,24 +1,34 @@
 import json
+import os
 import time
 import random
 import requests
 from fake_useragent import UserAgent
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.options import Options
-from .menu import get_user_input
-from .proxy import get_random_proxy
-from .user_agent import get_random_user_agent
-from .utils import random_wait, random_clicks, random_scroll
+from menu import get_user_input
+from proxy import get_random_proxy
+from user_agent import get_random_user_agent
+from utils import random_wait, random_clicks, random_scroll
 
 # Load configuration
-with open('../config/config.json') as config_file:
+config_path = 'config/config.json'
+if os.path.getsize(config_path) == 0:
+    raise ValueError("config/config.json is empty. Please provide a valid configuration.")
+
+with open(config_path) as config_file:
     config = json.load(config_file)
 
 # Load fake data
-with open('../data/fake_data.json') as data_file:
+fake_data_path = 'data/fake_data.json'
+if os.path.getsize(fake_data_path) == 0:
+    raise ValueError("data/fake_data.json is empty. Please provide valid fake data.")
+
+with open(fake_data_path) as data_file:
     fake_data = json.load(data_file)
 
 # Get user input
@@ -34,7 +44,8 @@ def access_website_with_selenium(url, fake_data, proxy, user_agent):
     chrome_options.add_argument(f'user-agent={user_agent}')
     chrome_options.add_argument('--headless')  # Jika Anda tidak ingin melihat browser
 
-    driver_service = Service("/path/to/chromedriver")
+    # Gunakan webdriver-manager untuk mengelola chromedriver
+    driver_service = ChromeService(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=driver_service, options=chrome_options)
 
     try:

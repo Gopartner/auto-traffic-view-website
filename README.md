@@ -5,7 +5,7 @@ Pastikan Anda telah menginstal Python 3.x dan pip. Anda juga memerlukan ChromeDr
 
 ### Instalasi ChromeDriver
 
-1. Unduh ChromeDriver dari [sini](https://sites.google.com/a/chromium.org/chromedriver/downloads) sesuai dengan versi Chrome Anda.
+1. Unduh ChromeDriver dari [sini](https://developer.chrome.com/docs/chromedriver/downloads?hl=id) sesuai dengan versi Chrome Anda.
 2. Ekstrak file yang diunduh dan letakkan di direktori yang sesuai.
 3. Perbarui jalur ke ChromeDriver di skrip `scripts/bot.py` pada bagian `Service("/path/to/chromedriver")`.
 
@@ -33,7 +33,7 @@ Perbarui file `config/config.json` sesuai kebutuhan Anda. Contoh konfigurasi:
   "http://192.168.1.100:8080",
   "http://192.168.1.101:8080",
   "http://192.168.1.102:8080"],
-  "website": "http://www.togelon.com"
+  "website": "http://www.yudibilly.blogspot.com"
 }
 ```
 
@@ -96,6 +96,28 @@ Perbarui file `config/config.json` sesuai kebutuhan Anda. Contoh konfigurasi:
 ## jalankan
 ```sh
 python scripts/bot.py
+```
+## struktur projects:
+```lua
+my-traffic-bot/
+├── README.md
+├── requirements.txt
+├── config/
+│   └── config.json
+├── data/
+│   ├── fake_data.json
+│   └── user_agents.txt
+├── logs/
+│   └── bot.log
+├── scripts/
+│   ├── __init__.py
+│   ├── bot.py
+│   ├── menu.py
+│   ├── proxy.py
+│   ├── user_agent.py
+│   └── utils.py
+└── tests/
+    └── test_bot.py
 ```
 
 ## Lokasi
