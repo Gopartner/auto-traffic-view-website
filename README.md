@@ -14,8 +14,7 @@ Pastikan Anda telah menginstal Python 3.x dan pip. Anda juga memerlukan ChromeDr
 1. Clone repository ini:
 
     ```sh
-    git clone https://github.com/username/my-traffic-bot.git
-    cd my-traffic-bot
+    https://github.com/Gopartner/auto-traffic-view-website.git
     ```
 
 2. Instal dependencies:
