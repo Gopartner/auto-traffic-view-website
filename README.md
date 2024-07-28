@@ -93,4 +93,14 @@ Perbarui file `config/config.json` sesuai kebutuhan Anda. Contoh konfigurasi:
   }
 }
 ```
+## jalankan
+```sh
+python scripts/bot.py
+```
+
+## Lokasi
+
+Proyek ini dibuat di Bali
+
+[Klik di sini untuk melihat lokasi di Google Maps](https://maps.app.goo.gl/42dhk7qCd1F6JWH4A)
 
