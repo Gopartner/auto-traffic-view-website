@@ -32,10 +32,10 @@ Perbarui file `config/config.json` sesuai kebutuhan Anda. Contoh konfigurasi:
   "proxies": [    "http://192.168.1.100:8080",    "http://192.168.1.101:8080",    "http://192.168.1.102:8080"  ],
   "website": "http://www.togelon.com"
 }
-
+```
 
 ## fake data
-```sh
+```json
 {
   "cookies": {
     "session_id": "abc123def456ghi789jkl",
